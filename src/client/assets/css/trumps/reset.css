@@ -1,0 +1,24 @@
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul,
+label {
+    margin: 0;
+    padding: 0;
+}
+
+label {
+  display: block;  
+}
+input {
+  margin: 0;
+}
+
+th {
+  text-align: left;
+}

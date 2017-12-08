@@ -1,0 +1,20 @@
+page: /router/page
+items: /cart/items
+products: /products
+---
+div.mw6.center(v-if="page === 'cart'")
+  h1.f2.f1-ns.mb3.mb5-ns.tc Cart
+
+  .pt3.pb2.ph3.bb.flex.justify-between(v-for="(item, productId) in items")
+    div(v-if="!products[productId]") Product is unavailable
+    div(v-else)
+      div
+        img.h4(:src="products[productId].image")
+        p Manufacturer:
+          em {{ products[productId].manufacturer.name }}
+      div.tr
+        .f4.f3-ns.mb3 {{ products[productId].name }}
+        .f4.b.mb3 $ {{ products[productId].price }}
+        button.w4.pa2.bg-purple.white.bw0.pointer(:data-patch=" 'add /cart/removeItem \"' + productId + '\"' ") Remove
+
+        //- button.w4.pa2.bg-purple.white.bw0.pointer(:data-patch=" 'add /cart/removeItem/value \"' + productId + '\"'; add /card/removeItem/timestamp /time/ms") Remove

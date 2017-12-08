@@ -1,0 +1,55 @@
+errors: /product/new/errors
+warnings: /product/new/warnings
+data: /product/new/data
+submit: /product/new/submit
+---
+
+  form.flex.flex-column.items-center(v-on:submit.prevent="" id="product-form")
+
+    fields-text(
+      id="name",
+      label="Name",
+      path="/product/new/data/name",
+      :value="data && data.name",
+      :error="errors && errors.name",
+      :warning="warnings && warnings.indexOf('name') !== -1"
+    )
+
+    fields-text(
+      id="price",
+      label="Price",
+      path="/product/new/data/price",
+      :value="data && data.price",
+      :warning="warnings && warnings.indexOf('price') !== -1"
+    )
+
+    fields-text(
+      id="manufacturer",
+      label="Manufacturer",
+      path="/product/new/data/manufacturer",
+      :value="data && data.manufacturer",
+      :warning="warnings && warnings.indexOf('manufacturer') !== -1"
+    )
+
+    fields-text(
+      id="imageurl",
+      label="ImageUrl",
+      path="/product/new/data/image"
+      :value="data && data.image",
+      :warning="warnings && warnings.indexOf('image') !== -1"
+    )
+
+    fields-textarea(
+      id="description",
+      label="Description",
+      path="/product/new/data/description",
+      :value="data && data.description",
+      :warning="warnings && warnings.indexOf('description') !== -1"
+    )
+
+    buttons-standard(
+      v-if="!submit",
+      text="Add Product",
+      data-patch="add /product/new/submit /time/ms"
+    )
+    buttons-standard(v-else, text="Please wait...")

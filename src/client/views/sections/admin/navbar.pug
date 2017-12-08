@@ -1,0 +1,9 @@
+page: /router/page
+---
+nav.flex.mb4.bg-gold.center
+  a.dib.w-50.pa3.tc(
+    data-patch="add /router/location 'admin-product-list' "
+    :class="['product-list', 'index'].indexOf(page) != -1 ? ['bg-purple', 'white'] : 'black'") View Products
+  a.dib.w-50.pa3.tc(
+    data-patch="add /router/location 'admin-product-form' "
+    :class="page === 'product-form' ? ['bg-purple', 'white'] : 'black'") Add Product

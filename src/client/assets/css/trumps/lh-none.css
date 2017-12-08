@@ -1,0 +1,21 @@
+
+
+.lh-none {
+  line-height: 0;
+}
+
+@media screen and (min-width: 30em) {
+  .lh-none-ns {
+    line-height: 0;
+  }
+}
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .lh-none-m {
+    line-height: 0;
+  }
+}
+@media screen and (min-width: 60em) {
+  .lh-none-l {
+    line-height: 0;
+  }
+}

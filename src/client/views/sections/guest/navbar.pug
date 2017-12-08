@@ -1,0 +1,12 @@
+location: /router/location
+section: /router/section
+count: /cart/count
+---
+nav.tc.bg-black.mb4
+  a.pa3.f4.dib.white(data-patch="add /router/location 'guest-index'", :class="location === 'guest-index' ? 'bg-purple' : ''") Home
+  a.pa3.f4.dib.white(
+    data-patch="add /router/location 'admin-index'"
+    :class="section === 'admin' ? 'bg-purple' : ''") Admin
+  a.pa3.f4.dib.white(data-patch="add /router/location 'guest-cart'", :class="location === 'guest-cart' ? 'bg-purple' : ''") Cart ({{ count }})
+
+//- how to multiple patch? eg for admin: data-patch="add /page 'admin'; add /pageSection 'product-list'",

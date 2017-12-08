@@ -1,0 +1,17 @@
+
+.animated {
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+}
+
+.ad2 {
+  animation-duration: 2s;
+}
+
+.ad3 {
+  animation-duration: 3s;
+}
+
+.ad4 {
+  animation-duration: 4s;
+}

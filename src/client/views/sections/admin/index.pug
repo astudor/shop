@@ -1,0 +1,10 @@
+page: /router/page
+section: /router/section
+---
+div(v-if="section === 'admin'")
+
+  sections-guest-navbar
+  h1.mb3.mb4-ns.f2.f1-ns.tc Admin
+  sections-admin-navbar.mw5.center
+  sections-admin-product-form(v-if="page === 'product-form'")
+  sections-admin-product-list(v-if="page === 'index' || page === 'product-list'")

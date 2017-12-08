@@ -1,0 +1,29 @@
+
+@import './settings/fonts';
+
+@import 'tachyons';
+@import 'tachyons-flexbox';
+@import "tachyons-font-family";
+@import "tachyons-svg";
+@import "tachyons-word-break";
+
+/* @import './objects/bg'; */
+
+@import './elements/svg';
+
+@import './trumps/reset';
+@import './trumps/bg-position';
+@import './trumps/m-auto';
+@import './trumps/lh-none';
+@import './trumps/animated';
+/* @import './trumps/bg-gradient'; */
+/* @import './trumps/bg-color'; */
+@import './trumps/heights';
+@import './trumps/user-select';
+@import './trumps/min-width';
+
+
+[data-patch],
+[data-patch] * {
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+
+name: /products/<id>/name
+price: /products/<id>/price
+manufacturer: /products/<id>/manufacturer/name
+id: /products<id>/_id
+---
+
+   
+tr
+  td.pa1 {{ name }}
+  td.pa1 {{ price }}
+  td.pa1 {{ manufacturer }}
+  td.pa1 Delete
+  td.pa1 Edit
+  
+//- table  
+//-   tr  
+//-     td.pa1 {{ name }}
+//-     td.pa1 {{ price }}
+//-     td.pa1 {{ manufacturer }}
+//-     td.pa1 Edit
+//-     td.pa1 Delete
+    //- td(:data-patch=" 'add /products/removeItem \"' +  product._id + '\"' ") Delete

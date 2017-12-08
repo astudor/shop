@@ -1,0 +1,36 @@
+$bar-height: 44px;
+$screen-min: 320px;
+$screen-max: 1000px;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+html { //what this for?
+  font-size: 16px;
+  font-size: responsive;
+  min-font-size: 16px;
+  max-font-size: 21px;
+  lower-font-range: $screen-min;
+  upper-font-range: $screen-max;
+
+  line-height: responsive;
+  min-line-height: 1.2em;
+  max-line-height: 1.8em;
+  lower-line-height-range: $screen-min;
+  upper-line-height-range: $screen-max;
+
+  letter-spacing: responsive;
+  min-letter-spacing: 0px;
+  max-letter-spacing: 4px;
+  lower-letter-spacing-range: $screen-min;
+  upper-letter-spacing-range: $screen-max;
+}
+
+body, html {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}

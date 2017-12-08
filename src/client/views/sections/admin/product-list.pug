@@ -1,0 +1,18 @@
+products: /products
+---
+
+div
+  p.mb1 Here are all products inserted in database.
+  table.db.overflow-auto
+    thead
+      tr
+        th.min-w200.pa1 Name
+        th.min-w100.pa1 Price
+        th.min-w150.pa1 Manufacturer
+        th.min-w100.pa1
+        th.min-w100.pa1
+    tbody
+      sections-admin-product-row(v-for="(product, id) in products" :id="id")
+        
+
+//- daca nu isi pastreaza identarea relativa la contextul in care este inclus, nu stie sa evalueze

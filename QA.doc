@@ -1,0 +1,86 @@
+1. Cand pun mai multe args intr-un model sau controller,
+ca sa se faca trigger la functia din model/ctrl
+a) este deajuns ca oricare din nodurile de la args sa se updateze?
+b) este necesar ca toate nodurile trecute in arguments, sa isi schimbe valoarea ?
+
+Raspuns: a
+
+
+2. Un model in functia din fn, nu are "lib" ca al 2-lea argument
+R: true
+
+3. Patch-urile nu mai pun pe nod si un timestamp?
+true
+
+4. La momentul initializarii unui model,
+daca are in args, un nod care nu exista,
+modelul va executa functia fn DACA EXISTA
+path-ul pe care tre sa puna o noua valoare creata de fn.
+
+Daca path-ul pe care tre sa puna noua valoare nu exista, fn nu se executa
+
+Daca ai mai multe argumente, tre sa existe cel putin unul ca fn sa se execute
+
+True
+
+
+5. Modelul ramane cu listener si pe path-ul pe care a pus o noua valoare,
+si re-executa functia fn cand path-ul isi schimba valoarea
+=> am eu bug cand fac "data-patch: replace /pageSection 'my-value'"
+pt ca am setat un model care sa asculte de args '/page' si sa reseteze path '/pageSection'
+
+
+
+6. data-patch in template uneori e folosit simplu,
+dar cand am date si am nevoie de binding e ":data-patch"
+
+Daca din greseala pun ":" fara sa fie nevoie de ele, dispare componenta cu totul din elementele randate.
+Ar fi cazul de o eroare pt user in consola?
+
+
+7. Daca imi tin view-urile in sub-foldere ale folderului de Views, nu stie sa mi le citeasca
+
+
+8. Daca in patch-ul din view nu este acceptat dash-ul '-', cum fac add la array ?
+* array-ul tre sa existe!
+
+9. args al unui ctrl, este un Map Object?
+- aveam nevoie la un mom. dat sa fiu sigur ca isi pastreaza ordinea
+
+
+10. Am voie structura umatoare?
+module.exports = {
+  args: {
+    required: { //referindu-ma la un sub-obiect al lui args, care grupeaza celelalte path-uri
+      name: '/product/new/name',
+      price: '/product/new/price',
+      manufacturer: '/product/new/manufacturer/name',
+      image: '/product/new/image',
+      description: '/product/new/description'
+    }
+  },
+  fn: function(args, lib) {
+
+  Raspuns: Nu! eroare: controller has an error TypeError: e.lastIndexOf is not a function /jsonmvc.js:13893
+
+
+Tasks:
+1. when product added to cart, set a different bg-class & text: 'Added' instead of 'Add'   - how to do without an entire ng-if?
+2. when deleting a product from admin, sync app with database (including table in view)
+3. when adding a product from admin, sync app with database
+3. how to make history.back() history.forward() history.go() ?
+4. better understand stuff in router folder
+5. Form Live Guided Validation:
+  Given a form has at least 3 required inputs
+  And the user completes two of them,
+  And the completed inputs are not the first two,
+  When the user clicks anywhere outside the second input,
+  Then a red border should flash for 1 second on fields that are required and empty and up to the last completed field
+  And gradually (.2s) revert from the last one to the first one
+  And remain visible only on the first empty required field.
+
+  Given this last state
+  When the user completes the first required field
+  If he does not click the next required field
+  Then he will be warned (orange border that fades in 1s or as soon as user clicks inside input) and guided to next field.
+  This behavior repeats until required fields are completed up to field that generated the error.

@@ -1,0 +1,14 @@
+---
+id label placeholder path value disabled warning
+---
+.mb3
+  label.f6.b.db.mb2(:for="'field-' + id", v-if="label") {{ label }}
+
+  textarea.ba.b--black-20.pa2.mb2.db.w-100.near-black(
+    :id="'field-' + id",
+    :placeholder="placeholder",
+    :data-patch="'add ' + path + ' [value]'"
+    v-model="value",
+    :disabled="disabled",
+    :class="warning ? 'b--dashed b--orange' : ''"
+  )

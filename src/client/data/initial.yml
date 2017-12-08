@@ -1,0 +1,35 @@
+config:
+  app:
+    title: JSONM-WEBPACK Sample app
+  ui:
+    mount:
+      root: '#app'
+      view: 'app'
+
+firebase:
+  config:
+    apiKey: ${FIREBASE_APIKEY}
+    authDomain: ${FIREBASE_AUTHDOMAIN}
+    databaseURL: ${FIREBASE_DATABASEURL}
+    projectId: ${FIREBASE_PROJECTID}
+    storageBucket: ${FIREBASE_STORAGEBUCKET}
+    messagingSenderId: ${FIREBASE_MESSAGINGSENDERID}
+    namespace: ${FIREBASE_NAMESPACE}
+  auth:
+    timeout: 60000
+    isPending: false
+
+nav:
+  history: []
+
+ui:
+  data: {}
+
+router:
+  ignore:
+  - home
+  default:
+    guest: guest-index
+  #   user: dashboard
+  #   admin: admin-dashboard
+inputErr: []

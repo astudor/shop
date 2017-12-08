@@ -1,0 +1,20 @@
+name: /products/<id>/name
+manufacturer: /products/<id>/manufacturer/name
+image: /products/<id>/image
+description: /products/<id>/description
+price: /products/<id>/price
+id: /products/<id>/_id
+---
+text
+---
+.flex.flex-column.w-50-m.w-25-l.ph3.mb3.mb4-ns.pb4.pb5-ns.bb.b--light-silver.bb-0-l
+  img(:src="image")
+  p {{ text }} 
+  p.mb3.f5.i.tr Manufacturer:
+    span.fs-normal {{ manufacturer }}
+  .mb2.f4.tc {{ name }}
+  p.mb3 {{ description }}
+  .f4.b.tr $ {{ price }}
+  .mt-auto.pv2.ph3.white.w4.center.tc.pointer.bg-purple(
+    :data-patch=" 'add /cart/addItem \"' + id + '\"' "
+  ) Add to cart

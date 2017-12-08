@@ -1,0 +1,13 @@
+page: /router/page
+products: /products
+cart: /cart/items
+---
+div.ph2.ph3-ns.mw9.center(v-if="page === 'index' || page === 'products'")
+  h1.tc.f2.f1-ns.mb3.mb5-ns Products Page
+
+  .flex.flex-wrap
+    sections-guest-product(v-for="(product, id) in products", :id="id", text="bla")
+
+
+//- :data-patch="'add /cart/addItem \"' + product._id + '\"; add /page \"cart\"' "
+//- la data-patch add, nu se mai trimite obiect cu value si timestamp?
