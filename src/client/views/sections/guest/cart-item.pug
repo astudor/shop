@@ -1,0 +1,21 @@
+products: /products
+image: /products/<id>/image
+manufacturer: /products/<id>/manufacturer/name
+product: /products/<id>/name
+price: /products/<id>/price
+id: /products/</id>/_id
+---
+
+  div
+    div.pa3.bb(v-if="!products[id]") Product is unavailable
+    div.pt3.pb2.ph3.bb.flex.justify-between(v-else)
+      div
+        img.h4(:src="image")
+        p Manufacturer:
+          em {{ manufacturer }}
+      div.tr
+        .f4.f3-ns.mb3 {{ product }}
+        .f4.b.mb3 $ {{ price }}
+        button.w4.pa2.bg-purple.white.bw0.pointer(:data-patch=" 'add /cart/removeItem \"' + id + '\"' ") Remove
+
+        //- button.w4.pa2.bg-purple.white.bw0.pointer(:data-patch=" 'add /cart/removeItem/value \"' + productId + '\"'; add /card/removeItem/timestamp /time/ms") Remove

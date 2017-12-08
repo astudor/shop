@@ -1,18 +1,14 @@
 products: /products
 ---
 
-div
-  p.mb1 Here are all products inserted in database.
-  table.db.overflow-auto
-    thead
-      tr
-        th.min-w200.pa1 Name
-        th.min-w100.pa1 Price
-        th.min-w150.pa1 Manufacturer
-        th.min-w100.pa1
-        th.min-w100.pa1
-    tbody
-      sections-admin-product-row(v-for="(product, id) in products" :id="id")
+div.overflow-auto.center.mw6
+  .dt-row
+    .dtc.w5.pv1.pl1.pr2.b Name
+    .dtc.w4.pa1.b Price
+    .dtc.w4.pa1.b Manufacturer
+    .dtc.w4.pa1.b
+    .dtc.w4.pa1.b    
+  sections-admin-product-row(v-for="(product, id) in products" :id="id")
         
 
 //- daca nu isi pastreaza identarea relativa la contextul in care este inclus, nu stie sa evalueze

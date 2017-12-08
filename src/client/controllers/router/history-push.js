@@ -1,19 +1,30 @@
 module.exports = {
   args: {
-    page: '/router/location'
+    location: '/router/location'  //should listen to router/page and be careful about admin index case
   },
-  fn: ({ page }, lib) => {
-    // let ignore = lib.get('/router/ignore') // why is 'home' ignored?
-    // let location = lib.get('/router/location')
+  fn: ({ location }, lib) => {
 
-    if (!page) {
+    if (!location) {
       return []
     }
 
-    // if (ignore.indexOf(location) !== -1) {
-    //   return []
-    // }
-    history.pushState({page: page}, '', window.location.origin + '/' + page)
+    let parts = location.split('-')
+
+    if (!parts || !parts[0]) {
+      return
+    }
+
+    if (parts[1] == 'index') {
+      parts = parts[0] == 'admin' ? 'admin' : ''
+    } else {
+      parts.shift()
+      parts = parts.join('-')
+    }
+
+
+    console.log('parts: ', parts);
+
+    history.pushState({ page: parts }, '', window.location.origin + '/' + parts)
 
     // cum fac sa functioneze history.back() history.forward() history.go(n) ?
 

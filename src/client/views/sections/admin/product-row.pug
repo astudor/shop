@@ -6,18 +6,10 @@ id: /products<id>/_id
 ---
 
    
-tr
-  td.pa1 {{ name }}
-  td.pa1 {{ price }}
-  td.pa1 {{ manufacturer }}
-  td.pa1 Delete
-  td.pa1 Edit
-  
-//- table  
-//-   tr  
-//-     td.pa1 {{ name }}
-//-     td.pa1 {{ price }}
-//-     td.pa1 {{ manufacturer }}
-//-     td.pa1 Edit
-//-     td.pa1 Delete
-    //- td(:data-patch=" 'add /products/removeItem \"' +  product._id + '\"' ") Delete
+div.dt-row
+  .dtc.w5.pv1.pl1.pr2 {{ name }}
+  .dtc.pa1 {{ price }}
+  .dtc.pa1 {{ manufacturer }}
+  .dtc.pv1.ph2.tc Edit
+  .dtc.pv1.ph2.tc(:data-patch=" 'add /products/removeItem \"' +  id + '\"' ") Delete
+      //- td(:data-patch=" 'add /products/removeItem \"' +  product._id + '\"' ") Delete

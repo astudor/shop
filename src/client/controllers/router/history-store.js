@@ -3,9 +3,7 @@ module.exports = {
     page: '/router/location'
   },
   fn: ({ page }, lib) => {
-    let history = lib.get('/router/history')
-
-    window.scroll(0, 0);
+    let history = lib.get('/router/history')    
 
     let patch = []
 
