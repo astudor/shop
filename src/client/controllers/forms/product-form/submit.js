@@ -13,14 +13,19 @@ module.exports = {
 
     let data = get('/product/new/data')
 
-    if (!data.name) {
-      return {
-        op: 'add',
-        path: '/product/new/errors',
-        value: {
-          name: 'Please add a name'
+    if (!data || !data.name) {
+      return [{
+          op: 'add',
+          path: '/product/new/errors',
+          value: {
+            name: 'Please add a name'
+          }
         }
-      }
+        // ,{
+        //   op: 'remove',
+        //   path: '/product/new/submit',
+        // }
+      ]
     }
 
     let ref = FIREBASE.database().ref('/products').push();
@@ -28,7 +33,7 @@ module.exports = {
     data.manufacturer = {
       name: data.manufacturer
     }
-    return ref.set(data).then(x => {
+    return ref.set(data).then(x => { 
       return [{
         op: 'remove',
         path: '/product/new'

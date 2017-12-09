@@ -10,22 +10,22 @@ module.exports = {
     }
     let required = ['name', 'price', 'manufacturer', 'image', 'description'];
 
-    let touchedKeys = Object.keys(data);
-    if (touchedKeys.length < 2) return;
+    let keysOfTouchedInputs = Object.keys(data);
+    if (keysOfTouchedInputs.length < 2) return;
 
-    let completedKeys = touchedKeys.filter(function(key, idx, arr) {
+    let keysOfCompletedInputs = keysOfTouchedInputs.filter(function(key, idx, arr) {
       if (!!data[key]) return true;
     })
-    if (completedKeys.length < 2) return;
+    if (keysOfCompletedInputs.length < 2) return;
 
-    let suspectKeys = required.slice();
-    let lastCompletedKey = completedKeys.pop();
+    let keysOfSuspectInputs = required.slice(); // make copy of required array-object
+    let lastCompletedKey = keysOfCompletedInputs.pop();
 
     //remove some suspects
-    suspectKeys.splice(suspectKeys.indexOf(lastCompletedKey))
+    keysOfSuspectInputs.splice(keysOfSuspectInputs.indexOf(lastCompletedKey));
 
-    let warningKeys = suspectKeys.reduce(function(acc, el, idx, arr) {
-      if (completedKeys.indexOf(el) != -1) return acc;
+    let warningKeys = keysOfSuspectInputs.reduce(function(acc, el, idx, arr) {
+      if (keysOfCompletedInputs.indexOf(el) != -1) return acc;
       acc.push(el);
       return acc;
     }, []);

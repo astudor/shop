@@ -7,16 +7,18 @@ submit: /product/new/submit
   form.flex.flex-column.items-center(v-on:submit.prevent="" id="product-form")
 
     fields-text(
-      id="name",
+      id="product",
       label="Name",
       path="/product/new/data/name",
       :value="data && data.name",
       :error="errors && errors.name",
       :warning="warnings && warnings.indexOf('name') !== -1"
     )
+    //- how does for example :error="errors && errors.name" work?
+      it looks like if evals to true, it proceeds to set error to be errors.name
 
     fields-text(
-      id="price",
+      id="prod-price",
       label="Price",
       path="/product/new/data/price",
       :value="data && data.price",
@@ -34,7 +36,7 @@ submit: /product/new/submit
     fields-text(
       id="imageurl",
       label="ImageUrl",
-      path="/product/new/data/image"
+      path="/product/new/data/image",
       :value="data && data.image",
       :warning="warnings && warnings.indexOf('image') !== -1"
     )

@@ -3,7 +3,7 @@ id label placeholder path value disabled warning error
 ---
 .mb3
   label.f6.b.db.mb2(:for="'field-' + id", v-if="label") {{ label }}
-
+  //- is :for the same with :v-for ? NO! is the binding of 'for' attribute!
 
   input.input-reset.ba.b--black-20.pa2.mb2.db.w-100.near-black(
     type="text",
